@@ -38,7 +38,7 @@ function getNewDog () {
 
 function render() {
   document.getElementById('jan').innerHTML = dog.getDogHtml()
-  document.getElementById('jan').style.backgroundImage = `url("/${dog.avatar}")`
+  document.getElementById('jan').style.backgroundImage = `url("${dog.avatar}")`
 }
 
 let dog = getNewDog()
