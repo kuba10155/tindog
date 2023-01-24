@@ -6,12 +6,13 @@ body {
 }
 
 .main {
+  background-size: cover;
   border-radius: 1%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-  height: 900px;
+  height: 750px;
   margin: 0 3px;
 }
 
@@ -19,7 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 900px;
+  height: 750px;
 }
 
 .endly {
