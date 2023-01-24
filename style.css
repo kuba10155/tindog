@@ -1,22 +1,25 @@
 body {
   background: white;
+  color: white;
   font-family: 'Poppins', sans-serif;
   margin: auto;
   width: 550px;
 }
 
 .main {
+  align-items: flex-start;
   background-size: cover;
   border-radius: 1%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
   height: 750px;
+  justify-content: flex-end;
   margin: 0 3px;
+  position: relative;
 }
 
 .end {
+  border-radius: 1%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,8 +39,11 @@ body {
 }
 
 .dog-info h2, p {
-  color: white;
   margin: 0;
+}
+
+p {
+  color: #B7B7B7;
 }
 
 .header {
@@ -72,6 +78,14 @@ body {
   width: 40px;
 }
 
+.message {
+  height: 100px;
+  position: absolute;
+  top: 45px;
+  left: 15px;
+  transform: rotate(-30deg);
+}
+
 .btn {
   align-self: center;
   background: white;
@@ -89,6 +103,14 @@ body {
   background: #E38CA9;
 }
 
+#ignored-btn:focus {
+  background: #FFE7EF;
+}
+
 #liked-btn:hover {
   background: #8AEBCD;
+}
+
+#liked-btn:focus {
+  background: #DBFFF4;
 }

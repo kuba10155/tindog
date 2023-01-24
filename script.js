@@ -2,23 +2,33 @@ import dogs from './data.js'
 import Dog from './Dog.js'
 
 const dogsArray = dogs
+const likeBtn = document.getElementById('liked-btn')
+const swipeBtn = document.getElementById('ignored-btn')
+const main = document.getElementById('main')
 
-document.getElementById('ignored-btn').addEventListener('click', function() {
+swipeBtn.addEventListener('click', function() {
+  likeBtn.disabled = true
+  swipeBtn.disabled = true
+  dog.madeDogSwiped()
+  renderMessage("nope")
   if(dogsArray.length > 0){
     dog = getNewDog()
-    render()
+    setTimeout(() => render(), 1000)
   } else {
-    endOfDogs()
+    setTimeout(() => endOfDogs(), 1000)
   }
 })
 
-
-document.getElementById('liked-btn').addEventListener('click', function() {
+likeBtn.addEventListener('click', function() {
+  likeBtn.disabled = true
+  swipeBtn.disabled = true
+  dog.madeDogLiked()
+  renderMessage("like")
   if(dogsArray.length > 0){
     dog = getNewDog()
-    render()
+    setTimeout(() => render(), 1000)
   } else {
-    endOfDogs()
+    setTimeout(() => endOfDogs(), 1000)
   }
 })
 
@@ -26,8 +36,7 @@ function endOfDogs() {
   document.getElementById('end').innerHTML = `
     <div id="endly" class="endly">
       <h3>This is all for now! 💔</h3>
-    </div>
-  `
+    </div>`
   document.getElementById('end').style.background = "#E38CA9"
 }
 
@@ -36,9 +45,16 @@ function getNewDog () {
   return dog ? dog : {}
 }
 
+function renderMessage(message) {
+  main.innerHTML += `
+    <img class="message" src="/${message}-image.png"></img>`
+}
+
 function render() {
-  document.getElementById('jan').innerHTML = dog.getDogHtml()
-  document.getElementById('jan').style.backgroundImage = `url("${dog.avatar}")`
+  main.innerHTML = dog.getDogHtml()
+  main.style.backgroundImage = `url("${dog.avatar}")`
+  likeBtn.disabled = false
+  swipeBtn.disabled = false
 }
 
 let dog = getNewDog()

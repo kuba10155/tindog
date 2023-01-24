@@ -11,5 +11,11 @@ class Dog {
     </div>
     `
   }
+  madeDogLiked() {
+    this.hasBeenLiked = true
+  }
+  madeDogSwiped() {
+    this.hasBeenSwiped = true
+  }
 }
 export default Dog
